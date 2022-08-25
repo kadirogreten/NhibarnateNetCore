@@ -35,17 +35,7 @@ namespace NhibarnateNetCore
         {
             var connStr = Configuration.GetConnectionString("DefaultConnection");
 
-            //var _sessionFactory = Fluently.Configure()
-            //    .Database(PostgreSQLConfiguration.Standard.ConnectionString(connStr))
-            //    .Mappings(x=>x.FluentMappings.AddFromAssembly(GetType().Assembly))
-            //    .ExposeConfiguration(cfg => new SchemaExport(cfg).Execute(false,true,false))
-            //    .BuildSessionFactory();
-
-
-            //services.AddScoped(f =>
-            //{
-            //    return _sessionFactory.OpenSession();
-            //});
+     
             services.AddNHibernate(connStr);
             services.AddControllers();
             services.AddSwaggerGen(c =>
